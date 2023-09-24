@@ -4,84 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electro Armed</title>
-    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+
 <body>
-    <header>
+    <header class="header">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid ">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">
-                    <img src="img/logo.png" alt="Bootstrap" width="40" height="30">
+                    <img src="img/icon.png" alt="Bootstrap" width="30" height="24">
                 </a>
-                <button class="navbar-toggler" type="button" 
-                data-bs-toggle="collapse" 
-                data-bs-target="#navbarS" 
-                aria-controls="navbarS" 
-                aria-expanded="false" 
-                aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarS">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Pagina Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="login.html">Inicio sesión</a></li>
-                        <li class="nav-item"><a class="nav-link" href="logup.html">Registrarse</a></li>
-                        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
-                    </ul>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="index.html">Pagina Inicio</a>
+                  <a class="nav-link" href="login.html">Inicio sesión</a>
+                  <a class="nav-link" href="logup.html">Registrarse</a>
+                  <a class="nav-link" href="home.html">home</a>
                 </div>
+              </div>
             </div>
           </nav>
-          <section class="texto-header text-center">
-            <h1>Electro Armed</h1>
+        <h1 class="title_principal text-center">Electro Armed</h1>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="img/herramienta1.png" class="d-block w-100" alt="imagen_herramienta">
+              </div>
+              <div class="carousel-item">
+                <img src="img/herramienta2.jpg" class="d-block w-100" alt="imagen_herramienta">
+              </div>
+              <div class="carousel-item">
+                <img src="img/herramienta3.jpg" class="d-block w-100" alt="imagen_herramienta">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+            <section class="texto-header text-center">
           </section>
     </header>
     <main>
-        <section>
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="img/herramienta3.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/herramienta3.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/herramienta3.jpg" class="d-block w-100" alt="...">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-        </section>
         <section class="sobreNosotros">
             <h2 class="titulo_sobreNosotros text-center">¿Quienes Somos?</h2>
-            <div class="sobreNosotrosImagen">
-                <img src="" alt="">
+            
                 <div class="sobreNosotrosTexto">
-                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore reprehenderit nulla possimus illum placeat, fugiat hic veritatis, est quia autem aliquam commodi nesciunt quo iusto non beatae laudantium exercitationem nostrum explicabo odit eum dolorem iste consectetur. Eius odit aut doloremque corporis perferendis aliquam dignissimos exercitationem. Odio error ea necessitatibus aperiam culpa facere inventore fugiat ratione architecto placeat, amet voluptatem excepturi cupiditate asperiores. Praesentium enim eligendi vero voluptatum, veniam aliquam quaerat ipsa consequuntur quisquam. Itaque molestias inventore nostrum culpa, facere minima, quasi officia sint eaque distinctio necessitatibus minus. Aspernatur exercitationem laudantium odio voluptates laboriosam incidunt, sequi quasi, perferendis quia, in facere?</span>
+                    <span>La ferretería "Electro Armed" es un establecimiento que se destaca por ofrecer una amplia gama de productos y herramientas de alta calidad para satisfacer las necesidades de construcción y mantenimiento del hogar. <br><br> Ubicada en el sur de la ciudad, esta ferretería brinda un servicio personalizado y asesoramiento técnico a sus clientes, garantizando que encuentren exactamente lo que necesitan para llevar a cabo sus proyectos de manera exitosa. Desde herramientas, manuales y hasta materiales de construcción, pintura, fontanería y más, esta ferretería se enorgullece de contar con un extenso inventario que satisface las demandas de cualquier proyecto.
+                    <br><br> Además de su oferta de productos de alta calidad, "Electro Armed" se distingue por su compromiso con la satisfacción del cliente, precios competitivos y una ubicación conveniente que facilita el acceso a sus servicios. Ya sea que estés buscando herramientas para una pequeña reparación en casa o planificando una renovación importante, esta ferretería es tu aliada confiable en el mundo de la construcción y remodelación.</span>
                 </div>
-            </div>
+            
         </section>
     </main>
     <footer>
+        <h3 class="title">Contactenos</h3>
         <section class="contacto">
-            <h3>Contactenos</h3>
+            
             <div class="contacto-foo">
                 <h6>Numero de contacto</h6>
-                <p>3222165381</p>
+                <p>3222165380</p>
             </div>
             <div class="contacto-foo">
                 <h6>Email</h6>
@@ -91,7 +87,7 @@
                 <h6>Direccion</h6>
                 <p>CRA 81 # 73 F 09 SUR, Bosa, Bogotá</p>
             </div>
-            <div class="contacto_map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9049149951643!2d-74.20209682499909!3d4.611037642428297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9f8825345467%3A0xaf395468b3d741f2!2sFERRELECTRICOS%20ELECTRO%20ARMED!5e0!3m2!1ses!2sco!4v1695177625473!5m2!1ses!2sco" width="200" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            <div class="contacto_map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9049149951643!2d-74.20209682499909!3d4.611037642428297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9f8825345467%3A0xaf395468b3d741f2!2sFERRELECTRICOS%20ELECTRO%20ARMED!5e0!3m2!1ses!2sco!4v1695177625473!5m2!1ses!2sco" width="180" height="80" style="border:0; border-radius: 4px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         </section>
     </footer>    
 </body>

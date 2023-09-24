@@ -1,0 +1,101 @@
+/* CSS Index */
+.header{
+    background-color: #f5f578;
+    color: black;
+    font-weight: 80;
+}
+title_principal
+.sobreNosotros{
+    background-color: rgba(219,255,65,1) ;
+    padding: 3em 2em;
+}
+.titulo_sobreNosotros{
+    margin-bottom: 2rem;
+}
+.sobreNosotrosTexto{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+footer {
+    background-color: #fa6f34;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    text-align: center;
+  }
+  .title {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  .contacto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .contacto-foo {
+    flex: 1;
+    max-width: 300px;
+    padding: 10px;
+    text-align: left;
+  }
+  .contacto_map {
+    flex: 1;
+    max-width: 300px;
+  }
+  .contacto_map iframe {
+    width: 100%;
+    height: auto;
+  }
+  .contacto-foo h6 {
+    font-size: 18px; 
+  }
+  .contacto-foo p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+
+  /* CSS login */
+body {
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: rgb(254,255,0);
+    background: linear-gradient(177deg, rgba(254,255,0,1) 0%, rgba(219,255,65,1) 50%, rgba(255,111,0,1) 100%);
+}   
+.container{
+    margin:80px auto 150 auto ;
+}
+.container_principal {
+    padding: 20px;
+}
+.card-body{
+    border-radius: 6px;
+    -webkit-box-shadow: -8px 7px 16px 0px rgba(186, 68, 0, 0.55);
+    -moz-box-shadow: -8px 7px 16px 0px rgba(212, 92, 0, 0.66);
+    sombra de cuadro: -8px 7px 16px 0px rgba(0,0,0,0.66);
+}
+.formulario {
+    text-align: center;
+}
+.card {
+    margin-top: 20px;
+    background-color: rgba(219,255,65,1) ;
+}
+.icon {
+    color: #ff3700;
+}
+.btn{
+    background-color: #fa6f34;
+    border-color: black;
+    color: black;
+}
+#crear{
+    color: #fa6f34;
+}
+@media (min-width: 768px) {
+    .formulario {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+
+  
