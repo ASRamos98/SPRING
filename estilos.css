@@ -71,6 +71,7 @@ body {
     .busqueda_items input{
         border: 2px solid lightgrey;
         border-radius: 6px;
+        width: 600px;
     }
     .container{
         display: inline;
