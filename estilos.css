@@ -67,14 +67,14 @@ body {
     background-color: #8d8d8d;
 }
 
-@media (min-width: 583px) and (max-width: 1400px) {
+@media (min-width: 583px) and (max-width: 1700px) {
     .busqueda_items input{
         border: 2px solid lightgrey;
         border-radius: 6px;
         width: 600px;
     }
     .container{
-        display: inline;
+        display: block;
     }
     .card{
         width: 18em;
