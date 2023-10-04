@@ -41,7 +41,7 @@ body{
     box-shadow: 6px 6px 12px 0px rgba(56,54,56,1);
 }
 .inventario p{
-    margin: 1rem;
+    margin: 0.5rem;
 }
 .inventario button{
     margin: 1rem;
@@ -71,7 +71,7 @@ body{
     position: relative;
     overflow: hidden;
     z-index: 1;
-    box-shadow: 6px 6px 12px #9f9d9d, -3px -3px 5px #fffeb8;
+    box-shadow: 6px 6px 12px #9f9d9d;
 }
 .boton::before{
     content: '';
