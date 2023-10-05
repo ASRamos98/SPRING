@@ -50,6 +50,11 @@ body{
     background-color: lightgrey;
     font-weight: bold;
 }
+.inventario img{
+    width: 60%;
+    height: 50%;
+}
+
 #carrito{
     border: 1px solid grey;
     border-radius: 4px;
