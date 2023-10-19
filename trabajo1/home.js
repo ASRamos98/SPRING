@@ -172,7 +172,7 @@ let productos = [
                 precioTotal += producto.precio;
                 let li = document.createElement("li");
                 let precioFormateado = formatearPrecio(producto.precio);
-                li.textContent = `producto agregado: ${producto.nombre} - Valor: ${precioFormateado}`;
+                li.textContent = ` ${producto.nombre} - Valor: ${precioFormateado}`;
                 
                 let Eliminar = document.createElement("button");
                     Eliminar.textContent = "Quitar";
