@@ -4,12 +4,12 @@ import { useState } from "react";
 
 
 export default function Eshop(){
-    const [itemSelecionado, setitemSelecionado] = useState([]);
+    const [selectedItems, setSelectItem] = useState([]);
 
     return(
         <div className="container d-flex">
-            <ListaProductos setitemSelecionado={setitemSelecionado}/>
-            <Carrito itemSelecionado={itemSelecionado} />
+            <ListaProductos setSelectItem={setSelectItem}></ListaProductos>
+            <Carrito selectedItems={selectedItems}></Carrito>
         </div>
     )
 }

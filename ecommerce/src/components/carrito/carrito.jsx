@@ -1,14 +1,14 @@
 import React from 'react'
 
-function Productos(props){
+function Producto(props) {
   return (
-  <li className='list-group-item d-flex justify-content-between align-items-start'>
-    <div className='ms-2 me-auto'>
-      <div className='fw-bold'>{props.titulo}</div>
-      {props.descripcion}
-    </div>
-    <span className='badge bg-primary rounded-pill'>{props.precio}</span>
-  </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-4 me-auto">
+        <div class="fw-bold">{props.titulo}</div>
+        {props.descripcion}
+      </div>
+      <span class="badge bg-primary rounded-pill">{props.precio}</span>
+    </li>
   );
 }
 
@@ -17,7 +17,7 @@ export const Carrito = (props) => {
 
   function pagar() {
     let venta = {
-      productos: props.itemSelecionado,
+      producto: props.selectedItems,
       total: total,
     };
 
@@ -28,22 +28,20 @@ export const Carrito = (props) => {
       method: "POST",
       body: JSON.stringify(venta),
     });
+    alert("compra realizada")
   }
 
 
   return (
-    <div className='col-4' id="cart">
+    <div className='col-3' id="cart">
       <h2 className='d-flex justify-content-center'>carrito de compras</h2>
       <ol className='list-group list-group-numbered' id="list">
-        {props.itemSelecionado.map((producto)=>{
-          total += producto.precio;
+      {props.selectedItems.map((item) => {
+          total += item.precio;
           return (
-             <Productos 
-                  titulo={producto.titulo} 
-                  descripcion={producto.descripcion} 
-                  precio={producto.precio}>
-              </Productos>)
-        })},
+            <Producto titulo={item.titulo} descripcion={item.descripcion} precio={item.precio}></Producto>
+          );
+        })}
       </ol>
       <div className="d-flex justify-content-evenly col-12 mt-4">
         <button type="button" class="btn btn-outline-dark">
