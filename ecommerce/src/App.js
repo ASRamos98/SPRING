@@ -7,5 +7,4 @@ function App() {
     <PaginaInicio/>
 )
 } 
-
 export default App;

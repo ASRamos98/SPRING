@@ -25,21 +25,20 @@ body{
     -webkit-box-shadow: 4px 3px 20px 0px rgba(102, 102, 102, 0.76);
     -moz-box-shadow: 4px 3px 20px 0px rgba(71, 71, 71, 0.76);
 }
-.productos{
-    display: grid;
+div .productos{
+    display: grid ;
     gap: 1rem;
     grid-auto-rows: 21rem;
     grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
     margin: 1em;
+    text-align: center;
+    border-radius: 7px;
+    background-color: rgb(209, 208, 208);
 }
 div .card{
     border: 1px solid black;
     display: block;
-}
-.productos div{
-    text-align: center;
-    border-radius: 7px;
-    background-color: rgb(244, 243, 243);
+    padding-top: 1em;
 }
 
 .productos p{
@@ -50,6 +49,7 @@ div .card{
     color: #000000;
     font-size: 1em;
     padding: 5px;
+    margin: 0.5rem;
     text-decoration: none;
     -webkit-border-radius: 28px;
     -moz-border-radius: 28px;

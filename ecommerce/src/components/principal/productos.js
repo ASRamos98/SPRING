@@ -4,29 +4,30 @@ import './styloPrincipal.css'
 import { Link } from 'react-router-dom'
 
 function ElementosProductos(props){
-
-    function addtocar(){
-        props.setitemSelecionado((arregloviejito)=>[ ...arregloviejito, {titulo:props.titulo, descripcion:props.descripcion, precio:props.precio},
-        ])
+    console.log("props.setitemSelecionado:", props.setitemSelecionado);
+    function addToCart() {
+        props.add((arregloviejito) => [
+            ...arregloviejito,
+            { titulo: props.titulo, descripcion: props.descripcion, precio: props.precio },
+        ]);
     }
     return (
-        <div className="productos">
-            <div className="card ">
-                <img src={props.img} alt='martillo'></img>
-                <div className="card-body">
-                    <h5 className="card-title">{props.titulo}</h5>
-                    <p className="card-text">{props.descripcion}</p>
-                </div>
-                <div className="card-footer">
-                    <button className='boton_precio'>{props.precio}
-                    </button>
-                    <button type="button" className='boton_compra' onClick={addtocar}>Comprar <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><path fill="currentColor" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2a1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0a2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2a1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0a2 2 0 0 1-4 0z"/></svg></button> 
-                </div>
-            </div>
+        <div class="card col-3 m-4">
+      <img src={props.img} class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{props.titulo}</h5>
+        <p class="card-text">{props.descripcion}</p>
+        <div className="d-flex justify-content-around col-12">
+          <button class="btn btn-secondary">{props.precio}</button>
+          <button type="button" class="btn btn-outline-warning" onClick={addToCart}>
+            Comprar
+          </button>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
-export default function ListaProductos(props){
+export default function ListaProductos(papa){
 
     let products =[
         {
@@ -80,21 +81,25 @@ export default function ListaProductos(props){
     ]
     return(
         <div>
-            <Navegacion></Navegacion>
+            <Navegacion></Navegacion> 
+        
+            <div className="col-10 d-flex flex-wrap justify-content-around">
+           
             {products.map((product)=>{
                 return (
-                <ElementosProductos 
-                img={product.imagen} 
-                titulo={product.titulo} 
-                descripcion={product.descripcion} 
-                precio={product.precio}
-                key={product.titulo}>
-                </ElementosProductos>
-                ) 
+                    <ElementosProductos 
+                    img={product.imagen} 
+                    titulo={product.titulo} 
+                    descripcion={product.descripcion} 
+                    precio={product.precio}
+                    add={papa.setitemSelecionado}
+                />
+                ); 
             })
             }
         </div>
-    )
+        </div>
+    );
 }
 
 function Navegacion(){
