@@ -1,10 +1,11 @@
 import React from 'react'
-import imagenes from './imagenes'
+//import imagenes from './imagenes'
 import './styloPrincipal.css'
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from "react";
 
 function ElementosProductos(props){
-    console.log("props.setitemSelecionado:", props.setitemSelecionado);
+    
     function addToCart() {
         props.add((arregloviejito) => [
             ...arregloviejito,
@@ -29,69 +30,99 @@ function ElementosProductos(props){
 }
 export default function ListaProductos(papa){
 
-    let products =[
-        {
-            imagen:imagenes[0],
-            titulo:"Martillo",
-            descripcion:"Martillo de Uña, Mango en Madera",
-            precio:20000
-        },
-        {
-            imagen:imagenes[1],
-            titulo:"Destornilladores",
-            descripcion:"Combo de 2 Destornilladores marca stanly",
-            precio:15000
-        },
-        {
-            imagen:imagenes[2],
-            titulo:"Alicate",
-            descripcion:"Alicate de mango de goma marca force",
-            precio:18000
-        },
-        {
-            imagen:imagenes[3],
-            titulo:"Taladro",
-            descripcion:"Taladro Percutor 1/2-pulg 800W 2600RPM",
-            precio:500000
-        },
-        {
-            imagen:imagenes[4],
-            titulo:"Sierra",
-            descripcion:"Sierra Circular Eléctrica de 7-1/4 Pulgadas 185 mm de 1800W",
-            precio:600000
-        },
-        {
-            imagen:imagenes[5],
-            titulo:"Pulidora",
-            descripcion:"Pulidora 9-pulg 2'200W + Pulidora 4-1/2 pulg 700W",
-            precio:450000
-        },
-        {
-            imagen:imagenes[6],
-            titulo:"Llaves",
-            descripcion:"Todo tipo de llaves para el hogar de excelente calidad",
-            precio:10000
-        },
-        {
-            imagen:imagenes[7],
-            titulo:"Cerradura",
-            descripcion:"Chapa Fortaleza Derecha Bronce con 4 llaves",
-            precio:80000
-        }
-    ]
+    const [productos, setproductos] = useState([]);
+
+    // let products =[
+    //     {
+    //         imagen:imagenes[0],
+    //         titulo:"Martillo",
+    //         descripcion:"Martillo de Uña, Mango en Madera",
+    //         precio:20000
+    //     },
+    //     {
+    //         imagen:imagenes[1],
+    //         titulo:"Destornilladores",
+    //         descripcion:"Combo de 2 Destornilladores marca stanly",
+    //         precio:15000
+    //     },
+    //     {
+    //         imagen:imagenes[2],
+    //         titulo:"Alicate",
+    //         descripcion:"Alicate de mango de goma marca force",
+    //         precio:18000
+    //     },
+    //     {
+    //         imagen:imagenes[3],
+    //         titulo:"Taladro",
+    //         descripcion:"Taladro Percutor 1/2-pulg 800W 2600RPM",
+    //         precio:500000
+    //     },
+    //     {
+    //         imagen:imagenes[4],
+    //         titulo:"Sierra",
+    //         descripcion:"Sierra Circular Eléctrica de 7-1/4 Pulgadas 185 mm de 1800W",
+    //         precio:600000
+    //     },
+    //     {
+    //         imagen:imagenes[5],
+    //         titulo:"Pulidora",
+    //         descripcion:"Pulidora 9-pulg 2'200W + Pulidora 4-1/2 pulg 700W",
+    //         precio:450000
+    //     },
+    //     {
+    //         imagen:imagenes[6],
+    //         titulo:"Llaves",
+    //         descripcion:"Todo tipo de llaves para el hogar de excelente calidad",
+    //         precio:10000
+    //     },
+    //     {
+    //         imagen:imagenes[7],
+    //         titulo:"Cerradura",
+    //         descripcion:"Chapa Fortaleza Derecha Bronce con 4 llaves",
+    //         precio:80000
+    //     }
+    // ]
+    let pokemons = ["charmander", "pikachu", "ditto", "squirtle", "metapod", "venusaur","charmeleon","blastoise","weedle"];
+
+    useEffect(() => {
+        pokemons.map((pokemon) => {
+          fetch("https://pokeapi.co/api/v2/pokemon/" + pokemon, {
+            headers: {
+            accept: "application/json",
+            },
+            method: "GET",
+            mode: "cors",
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log(data);
+              setproductos((arrayViejito) => [
+                ...arrayViejito,
+                {
+                  titulo: data.name,
+                  precio: data.weight * 100,
+                  descripcion: `cuenta con ${data.moves.length} movimientos`,
+                  img: data.sprites.front_default,
+                },
+              ]);
+            })
+            .catch((event) => console.log(event));     
+        });
+      },[]);
+
     return(
         <div>
             <Navegacion></Navegacion> 
         
-            <div className="col-10 d-flex flex-wrap justify-content-around">
+            <div className="cards">
            
-            {products.map((product)=>{
+            {productos.map((producto)=>{
                 return (
                     <ElementosProductos 
-                    img={product.imagen} 
-                    titulo={product.titulo} 
-                    descripcion={product.descripcion} 
-                    precio={product.precio}
+                    img={producto.img} 
+                    titulo={producto.titulo} 
+                    descripcion={producto.descripcion} 
+                    precio={producto.precio}
                     add={papa.setitemSelecionado}
                 />
                 ); 

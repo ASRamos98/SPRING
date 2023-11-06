@@ -10,8 +10,7 @@ import { Carrito } from './components/carrito/carrito';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>  
-    <React.StrictMode>   
+  <BrowserRouter>     
       <Routes>
         <Route path="/" exact element={<App />}/>
         <Route path='login' element={<Login/>}/>
@@ -19,7 +18,6 @@ root.render(
         <Route path='home' element={<ListaProductos/>}/>
         <Route path='carrito' element={<Carrito/>} />
       </Routes>
-    </React.StrictMode>
   </BrowserRouter>
 );
 
